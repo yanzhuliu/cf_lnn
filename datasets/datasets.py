@@ -58,9 +58,9 @@ class RigidBodyDataset(Dataset):
             
         if mode != "test":    
             seed_everything(42)
-            ts_, zs_, is_clds_ = self.chunk_training_data(ts_, zs_, is_clds_, chunk_len, cf=False)
+            ts_, zs_, is_clds_ = self.chunk_training_data(ts_, zs_, is_clds_, chunk_len, cf=True)
             seed_everything(0)
-            ts, zs, is_clds = self.chunk_training_data(ts, zs, is_clds, chunk_len, cf=True)
+            ts, zs, is_clds = self.chunk_training_data(ts, zs, is_clds, chunk_len, cf=False)
 
         self.ts, self.zs, self.is_clds = ts.to(dtype=dtype), zs.to(dtype=dtype), is_clds
         self.ts_, self.zs_, self.is_clds_ = ts_.to(dtype=dtype), zs_.to(dtype=dtype), is_clds_

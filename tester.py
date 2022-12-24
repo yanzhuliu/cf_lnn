@@ -18,17 +18,17 @@ model_names = [
     "CFLNN",
 ]
 system_names = [
-#    "_BP5_cf_3",
+    "_BP5_cf_1",
 #    "_BP5_cf_2",
 #    "_BP5_cf_3"
-    "_CP3_cf_3",
+#    "_CP3_cf_3",
 ]
 class_names = [
-#    "BouncingPointMasses",
+    "BouncingPointMasses",
  #   "BouncingPointMasses",
  #   "BouncingPointMasses"
     # "ChainPendulumWithContact",
-    "ChainPendulumWithContact",
+#    "ChainPendulumWithContact",
 ]
 
 bodies = {}
@@ -50,7 +50,7 @@ for system_name in system_names:
             "logs",
             f"{system_name}_{model_name}_N800",
             "version_0",
-            "epoch=486-step=2435.ckpt"
+            "best.ckpt"
         )
         model = Model.load_from_checkpoint(checkpoint_path)
 
